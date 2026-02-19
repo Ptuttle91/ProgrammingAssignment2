@@ -9,6 +9,8 @@ Resources used:
 [Logging Module]
 - https://docs.python.org/3/library/dataclasses.html
 - https://peps.python.org/pep-0557/
+[History]
+- https://realpython.com/python-pathlib/
 
 File Tree:  
 Programming Assignment 2/  
