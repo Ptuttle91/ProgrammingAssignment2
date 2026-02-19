@@ -5,6 +5,11 @@ Link to GitHub: https://github.com/Ptuttle91/ProgrammingAssignment2
 
 Note: This project only uses Python Standard Library
 
+Resources used:
+[Logging Module]
+- https://docs.python.org/3/library/dataclasses.html
+- https://peps.python.org/pep-0557/
+
 File Tree:  
 Programming Assignment 2/  
   |  
