@@ -11,6 +11,11 @@ Resources used:
 - https://peps.python.org/pep-0557/
 [History]
 - https://realpython.com/python-pathlib/
+[Task Registry]
+- https://peps.python.org/pep-0563
+- https://peps.python.org/pep-0649
+- https://typing.python.org/en/latest/spec/special-types.html
+- https://typing.python.org/en/latest/spec/callables.html
 
 File Tree:  
 Programming Assignment 2/  
