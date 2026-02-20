@@ -31,7 +31,7 @@ Programming Assignment 2/
   | - core/  
     | - __init__.py  
     | - modulo.py (Contains tasks 1-6)
-    | - cryptography.py ( Contains tasks 7 and 8)
+    | - ciphers.py (Contains tasks 7 and 8)
     | - task_registry.py (schema of tasks and overlapping variables)  
     | - logging_module.py (Data class for logs)  
     | - history.py (Exporting of logs to txt. documents)
