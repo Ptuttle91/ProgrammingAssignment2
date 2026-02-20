@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from datetime import datetime
 
 @dataclass
-class Logging:
+class LogEntry:
     timestamp: str
     task_name: str
     inputs: dict
