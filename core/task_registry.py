@@ -145,7 +145,7 @@ TASKS: list[TaskSpecification] = [
         callable_path="core.ciphers:skip_ahead_encrypt",
         inputs=[
             InputSpecification(name="word", kind="str", label="Word"),
-            InputSpecification(name="k", kind="int", label="Key (k)"),
+            InputSpecification(name="key", kind="int", label="Key (k)"),
         ],
         output_label="Task 8 - Skip Ahead Cipher Encrypted Text",
     ),
