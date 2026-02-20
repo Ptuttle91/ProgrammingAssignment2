@@ -115,5 +115,70 @@ class App:
             
             entry = ttk.Entry(row, textvariable=var, width=40)
             entry.pack(side="left")
-            
-        
+
+
+# This section holds the functions for Running and Logging
+
+    def _run_task(self)->None:
+        if not self.current_task:
+            messagebox.showinfo("Error","Error: No Task Selected!")
+            return
+
+        # This section builds an input dictionary with types based on spec.kind
+        inputs: dict[str, object] = {}
+
+        for spec in self.current_task.inputs:
+            raw = self.input_vars[spec.name].get()
+
+            # I am skipping a validation function as the assignment specifies that inputs are assumed valid
+            if spec.kind =="int":
+                inputs[spec.name] = int(raw)
+            else:
+                inputs[spec.name] = raw
+
+        try:
+            fn = resolve_callable(self.current_task.callable_path)
+            result = fn(**inputs)
+            self._set_output(str(result))
+            entry = LogEntry.create(
+                task_name=self.current_task.title,
+                inputs=inputs,
+                outputs=result,
+            )
+            self.history.add(entry)
+            self._refresh_history_preview()
+
+        except Exception as e:
+            messagebox.showerror("Error", f"Error: Unable to run task" \n "{e}")
+
+
+    def _set_output(self, text: str)->None:
+        self.output_text.delete(1.0, tk.END)
+        self.output_text.insert(1.0, text)
+
+
+    def _refresh_history_preview(self)->None:
+        self.history_text.delete(1.0, tk.END)
+        self.history_text.insert(1.0, self.history.to_text())
+
+    # This section holds the functions for exporting results and clearing the fields.
+
+    def _export_log(self)->None:
+        path = filedialog.asksaveasfilename(
+            title="Export Log As",
+            defaultextension=".txt"
+            filetypes=[("Text File", "*.txt")],
+        )
+        if not path:
+            return
+
+        try:
+            self.history.export_txt(path)
+            messagebox.showinfo("Success", "Log Exported Successfully to: \n{path}")
+        except Exception as e:
+            messagebox.showerror("Export Error", str(e)))
+
+    def _clear_log(self)->None:
+        self.history.clear()
+        self._refresh_history_preview()
+        self._set_output("Cleared.")
