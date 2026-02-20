@@ -48,7 +48,7 @@ TASKS: list[TaskSpecification] = [
         task_id="Task 1",
         title="Task 1 - Congruent Mod Range",
         description="List all of the integers x in [lower, upper] such that x = b (mod n).",
-        callable_path="core.number_theory:task1_congruent_mod_range",
+        callable_path="core.modulo:task1_congruent_mod_range",
         inputs=[
             InputSpecification(name="b", kind="int", label="b"),
             InputSpecification(name="n", kind="int", label="n"),
@@ -73,7 +73,7 @@ TASKS: list[TaskSpecification] = [
         task_id="Task 3",
         title="Task 3 - Greatest common divisor",
         description="Return the greatest common divisor(a, b) using the divisors() function from Task 2.",
-        callable_path="core.number_theory:task3_greatest_common_divisor",
+        callable_path="core.modulo:task3_greatest_common_divisor",
         inputs=[
             InputSpecification(name="a", kind="int", label="a"),
             InputSpecification(name="b", kind="int", label="b"),
@@ -85,7 +85,7 @@ TASKS: list[TaskSpecification] = [
         task_id="Task 4",
         title="Task 4 - Multiplicative Inverse",
         description="Return the multiplicative inverse of a (mod n) if it exists.",
-        callable_path="core.number_theory:task4_multiplicative_inverse",
+        callable_path="core.modulo:task4_multiplicative_inverse",
         inputs=[
             InputSpecification(name="a", kind="int", label="a"),
             InputSpecification(name="n", kind="int", label="n"),
@@ -97,54 +97,54 @@ TASKS: list[TaskSpecification] = [
         task_id="Task 5",
         title="Task 5 - Relatively Prime, using tasks 2 and 3",
         description="Return True if a and b are relatively prime. If not, return False",
-        callable_path="core.number_theory:task5_relatively_prime",
+        callable_path="core.modulo:task5_relatively_prime",
         inputs=[
             InputSpecification(name="a", kind="int", label="a"),
             InputSpecification(name="b", kind="int", label="b"),
         ],
         output_label="Task 5 - Relatively prime?",
     ),
-    
+
     TaskSpecification(
         task_id="Task 6A",
         title="Task 6A - An Explanation or Euclidean Algorithm",
         description="Written task to return my explanation of euclidean algorithms",
-        callable_path="core.number_theory:task6a_euclidean_writeup",
+        callable_path="core.modulo:task6a_euclidean_writeup",
         inputs=[],
         output_label="Task 6-A Write-Up:",
     ),
-    
+
     TaskSpecification(
         task_id="Task 6B",
         title="Task 6B - A Relatively Prime Euclidean Algorithm",
         description="Return True if a and b are relatively prime using Euclid's algorithm. If not, return False",
-        callable_path="core.number_theory:task6b_relatively_prime_euclid",
+        callable_path="core.modulo:task6b_relatively_prime_euclid",
         inputs=[
             InputSpecification(name="a", kind="int", label="a"),
             InputSpecification(name="b", kind="int", label="b"),
         ],
         output_label="Relatively prime?"
     ),
-    
+
     TaskSpecification(
         task_id="Task 7",
         title="Task 7 - Move-Over Cipher Encryption",
         description="Encrypt a word using a Move-Over cipher with a key of K.",
         callable_path=
-        "core.number_theory:task7_move_over_encrypt",
+        "core.modulo:task7_move_over_encrypt",
         inputs=[
             InputSpecification(name="k", kind="int", label="Key (k)"),
             InputSpecification(name="word", kind="str", label="Word"),
         ],
         output_label="Task 7 - Move Over Cipher Encrypted Text",
     ),
-    
+
     TaskSpecification(
         task_id="Task 8",
         title="Task 8 - Skip Ahead Cipher Encryption",
         description="Encrypt a word using a Skip Ahead cipher with a key of K.",
         callable_path=
-        "core.number_theory:task8_skip_ahead_encrypt",
+        "core.modulo:task8_skip_ahead_encrypt",
         inputs=[
             InputSpecification(name="word", kind="str", label="Word"),
             InputSpecification(name="k", kind="int", label="Key (k)"),
@@ -163,7 +163,7 @@ def get_task_by_title(title: str)->TaskSpecification
         if t.title == title:
             return t
         raise KeyError(f"Error: Task with title {title} not found")
-    
+
 def get_task_by_id(task_id: int)->TaskSpecification
     # Allows lookup of TaskSpecification by task_id
     for t in TASKS:
