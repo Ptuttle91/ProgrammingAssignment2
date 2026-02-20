@@ -50,7 +50,7 @@ def task6a_euclidean_writeup()-> str:
     # NOTE: This should return a text output. Ensure that there is no required input, or if so, see if button name can change to 'view' instead of 'submit'.
     return(
         "Task 6.A: Euclidean Algorithm: \n"
-        "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-"
+        "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- \n"
         "The purpose of the Euclidean Algorithm is to efficiently \n"
         "find the greatest common divisor (gcd) of two integers. \n"
         "This is performed by repeatedly replacing a pair until \n"
