@@ -20,6 +20,7 @@ Resources used:
 - https://realpython.com/python-modulo-operator/
 [Ciphers]
 - https://docs.python.org/3/library/stdtypes.html#text-and-binary-sequence-type-methods-summary
+- https://www.w3schools.com/python/ref_string_join.asp
 
 File Tree:  
 Programming Assignment 2/  
