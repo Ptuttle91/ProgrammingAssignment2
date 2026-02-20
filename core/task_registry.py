@@ -62,7 +62,7 @@ TASKS: list[TaskSpecification] = [
         task_id="Task 2",
         title="Task 2 - Divisors",
         description="Return all positive divisors of x.",
-        callable_path="core.number_theory:task2_divisors",
+        callable_path="core.modulo:task2_divisors",
         inputs=[
             InputSpecification(name="x", kind="int", label="x"),
         ],
@@ -131,7 +131,7 @@ TASKS: list[TaskSpecification] = [
         title="Task 7 - Move-Over Cipher Encryption",
         description="Encrypt a word using a Move-Over cipher with a key of K.",
         callable_path=
-        "core.modulo:task7_move_over_encrypt",
+        "core.ciphers:task7_move_over_encrypt",
         inputs=[
             InputSpecification(name="k", kind="int", label="Key (k)"),
             InputSpecification(name="word", kind="str", label="Word"),
@@ -144,7 +144,7 @@ TASKS: list[TaskSpecification] = [
         title="Task 8 - Skip Ahead Cipher Encryption",
         description="Encrypt a word using a Skip Ahead cipher with a key of K.",
         callable_path=
-        "core.modulo:task8_skip_ahead_encrypt",
+        "core.ciphers:task8_skip_ahead_encrypt",
         inputs=[
             InputSpecification(name="word", kind="str", label="Word"),
             InputSpecification(name="k", kind="int", label="Key (k)"),
