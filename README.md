@@ -18,6 +18,8 @@ Resources used:
 - https://typing.python.org/en/latest/spec/callables.html
 [Modulo]
 - https://realpython.com/python-modulo-operator/
+[Ciphers]
+- https://docs.python.org/3/library/stdtypes.html#text-and-binary-sequence-type-methods-summary
 
 File Tree:  
 Programming Assignment 2/  
