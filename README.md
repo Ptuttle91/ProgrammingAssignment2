@@ -16,8 +16,8 @@ Resources used:
 - https://peps.python.org/pep-0649
 - https://typing.python.org/en/latest/spec/special-types.html
 - https://typing.python.org/en/latest/spec/callables.html
-[Modulo[
-- 
+[Modulo]
+- https://realpython.com/python-modulo-operator/
 
 File Tree:  
 Programming Assignment 2/  
