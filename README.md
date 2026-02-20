@@ -28,7 +28,8 @@ Programming Assignment 2/
     | - widgets.py (Reusable UI piece, such as labeled entries, output boxes, etc.)
   | - core/  
     | - __init__.py  
-    | - modulo.py (Tasks 1-6)  
+    | - modulo.py (Contains tasks 1-6)
+    | - cryptography.py ( Contains tasks 7 and 8)
     | - task_registry.py (schema of tasks and overlapping variables)  
     | - logging_module.py (Data class for logs)  
     | - history.py (Exporting of logs to txt. documents)
