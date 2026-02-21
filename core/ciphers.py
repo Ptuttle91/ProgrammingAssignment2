@@ -15,6 +15,8 @@ def skip_ahead_encrypt(word: str, key: int) -> str:
     # This holds the logic for task 8.
     # It will operate by reording characters into a new list, while jumping forward by defined positions.
     # Will utilize wrapping with modulo for the key.
+    # Experienced error with smaller words losing characters. Likely due to not being coprime with length of word?
+    # Will consider integrate value error despite informed that only valid inputs will be provided.
     n = len(word)
     cipher = [""] * n
     idx = 0
