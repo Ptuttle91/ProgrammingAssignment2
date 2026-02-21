@@ -132,8 +132,8 @@ TASKS: list[TaskSpecification] = [
         description="Encrypt a word using a Move-Over cipher with a key of K.",
         callable_path="core.ciphers:move_over_encrypt",
         inputs=[
-            InputSpecification(name="key", kind="int", label="Key (k)"),
             InputSpecification(name="word", kind="str", label="Word"),
+            InputSpecification(name="key", kind="int", label="Key (k)"),
         ],
         output_label="Task 7 - Move Over Cipher Encrypted Text",
     ),
