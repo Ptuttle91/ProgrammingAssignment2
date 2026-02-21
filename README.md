@@ -25,20 +25,19 @@ Resources used:
 File Tree:  
 Programming Assignment 2/  
   |  
-  | - ReadMe.txt  
+  | - ReadMe.md
   | - Main.py (This will launch the GUI)  
   | - GUI/  
     | - __init__.py  
-    | - app.py (Use TKinter for ui. Create export option for user I/O)  
-    | - widgets.py (Reusable UI piece, such as labeled entries, output boxes, etc.)
+    | - app.py (Contains the GUI functions using tkinter.)  
   | - core/  
     | - __init__.py  
     | - modulo.py (Contains tasks 1-6)
     | - ciphers.py (Contains tasks 7 and 8)
-    | - task_registry.py (schema of tasks and overlapping variables)  
+    | - task_registry.py (Maps out tasks and provides a label to assist in interfacing with the GUI)  
     | - logging_module.py (Data class for logs)  
     | - history.py (Exporting of logs to txt. documents)
-  | - exports  
-    | - log.txt (Log files exported here by default.)  
+  | - exports (This folder exists as a place to save logs to)  
+    | - 
 
   
