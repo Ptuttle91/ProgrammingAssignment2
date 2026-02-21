@@ -28,11 +28,11 @@ class History:
             lines.append(f"[{e.timestamp}] {e.task_name}")
             lines.append(f"Inputs: {e.inputs}")
             lines.append(f"Outputs: {e.outputs}")
-            lines.append("-*" * 30)
-            
+            lines.append("*" * 30)
+
         return ("\n".join(lines))
-    
+
     def export_text(self, filepath: str) -> None:
         path = Path(filepath)
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(self.toText()), encoding="utf-8"
+        path.write_text(self.to_Text(), encoding="utf-8")
