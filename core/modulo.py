@@ -8,6 +8,7 @@ def congruent_mod(b:int, n: int, lower: int, upper: int) -> list[int]:
     return [x for x in range(lower, upper+1) if (x-b) % n == 0]
 
 
+
 def divisors(x: int) -> list[int]:
     # This is the log for task 2, returning the positive divisors of x in the form of a list.
     x = abs(x)
@@ -18,6 +19,7 @@ def divisors(x: int) -> list[int]:
         if x % d == 0:
             divs.append(d)
     return divs
+
 
 
 def greatest_common_divisor(a: int, b:int) -> int:
@@ -31,9 +33,11 @@ def greatest_common_divisor(a: int, b:int) -> int:
         return max(common)
 
 
+
 def multiplicative_inverse(a: int, b: int, n: int) -> bool:
     # This holds the logic for task 4. It will return True is a and b are multiplicative inverses mod n, else will return false.
     return(a*b) % n == 1
+
 
 
 def relatively_prime(a:int, b:int) -> bool:
@@ -45,12 +49,13 @@ def relatively_prime(a:int, b:int) -> bool:
     return greatest_common_divisor(a,b) == 1
 
 
+
 def task6a_euclidean_writeup()-> str:
     # This is the logic for task 6a, a writeup to describe a Euclidean Algorithm in the form of a string.
     # NOTE: This should return a text output. Ensure that there is no required input, or if so, see if button name can change to 'view' instead of 'submit'.
     return(
         "Task 6.A: Euclidean Algorithm: \n"
-        "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- \n"
+        "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n"
         "The purpose of the Euclidean Algorithm is to efficiently \n"
         "find the greatest common divisor (gcd) of two integers. \n"
         "This is performed by repeatedly replacing a pair until \n"
