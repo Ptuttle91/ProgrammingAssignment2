@@ -62,27 +62,27 @@ class App:
         self.export_btn.pack(side="left", padx=10)
 
     def _build_input_area(self)->None:
-        outer=ttk.Frame(self.root, text="Inputs", padding="10 10 10 10")
-        outer.pack(fill="x")
+        outer=ttk.LabelFrame(self.root, text="Inputs", padding="10")
+        outer.pack(fill="x", padx=10, pady=(10,0))
 
-        self.inputs_container = ttk.Frame(outer, padding="10 10 10 10")
+        self.inputs_container = ttk.Frame(outer)
         self.inputs_container.pack(fill="x")
 
         self.task_desc = ttk.Label(outer, text="", wraplength=900, justify="left")
         self.task_desc.pack(fill="x", pady= (10,0))
 
     def _build_output_area(self)->None:
-        frame = ttk.Frame(self.root, text="Output", padding="10 10 10 10")
+        frame = ttk.LabelFrame(self.root, text="Output", padding="10 10 10 10")
         frame.pack(fill="both", expand="yes", padx=10, pady=10)
 
-        self.output_text = tk.Text(frame, height=8, wrap="words")
+        self.output_text = tk.Text(frame, height=8, wrap="word")
         self.output_text.pack(fill="both", expand="yes", padx=10, pady=10)
 
     def _build_history_area(self)->None:
         frame = ttk.LabelFrame(self.root, text="Run History Preview", padding="10 10 10 10")
         frame.pack(fill="both", expand="yes", padx=10, pady=(0,10))
 
-        self.history_text = tk.Text(frame, height=10, wrap="words")
+        self.history_text = tk.Text(frame, height=10, wrap="word")
         self.history_text.pack(fill="both", expand="yes")
 
         self._refresh_history_preview()
@@ -95,17 +95,17 @@ class App:
 
         self.task_desc.config(text=self.current_task.description)
 
-        for child in self.input_container.winfo_children():
+        for child in self.inputs_container.winfo_children():
             child.destroy()
 
         self.input_vars.clear()
 
         if not self.current_task.inputs:
-            ttk.Label(self.input_container, text="No Inputs!").pack(anchor="w")
+            ttk.Label(self.inputs_container, text="No Inputs Required. Please Click Run Task to view answer.").pack(anchor="w")
             return
 
         for spec in self.current_task.inputs:
-            row = (ttk.Frame(self.input_container))
+            row = (ttk.Frame(self.inputs_container))
             row.pack(fill="x",pady=3)
 
             label_text = spec.label if spec.label else spec.name
@@ -159,7 +159,7 @@ class App:
 
     def _refresh_history_preview(self)->None:
         self.history_text.delete(1.0, tk.END)
-        self.history_text.insert(1.0, self.history.to_text())
+        self.history_text.insert(1.0, self.history.toText())
 
     # This section holds the functions for exporting results and clearing the fields.
 
